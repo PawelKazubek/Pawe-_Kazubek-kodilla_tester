@@ -2,7 +2,7 @@ public class User {
     String name;
     int age;
 
-    public User(String name; int age) {
+    public User(String name, int age) {
         this.name = name;
         this.age = age;
 
@@ -22,6 +22,18 @@ public class User {
         User frankie = new User("Frankie", 45);
         User[] users = {anna, betty, carl, david, eva, frankie};
 
+        double result = 0;
+        for (int i = 0; i < users.length; i ++) {
+            result = result + users[i].getAge();
+        }
+        double average = result / users.length;
+        System.out.println(average);
+
+        for (int i = 0; i < users.length; i ++) {
+        if (users[i].getAge() < average) {
+        System.out.println(users[i].getAge());
+            }
+        }
 
     }
 }
