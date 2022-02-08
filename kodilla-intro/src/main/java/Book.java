@@ -8,7 +8,12 @@ public class Book {
     }
 
     public static Book of(String author, String title) {
-       return new Book(author, title);
+
+        return new Book(author, title);
+    }
+    public String toString() {
+
+        return this.author + " " + this.title;
     }
 
 }
