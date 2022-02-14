@@ -1,20 +1,20 @@
 package com.kodilla.inheritance.homework;
 
 public class OperationSystemPlus extends OperatingSystem {
+
     public OperationSystemPlus(int publicationyear) {
         super(publicationyear);
     }
-    public void turnOnMonth() {
-        System.out.println("Turn on month...");
 
-    }
+    @Override
+    public void turnOn() {
 
-    public void turnOffMonth() {
-        System.out.println("Turn off month...");
+        System.out.println("Publication year is turned on now");
     }
 
     @Override
-    public void showName() {
-        System.out.println("Sony Vaio");
+    public void turnOff() {
+
+        System.out.println("Publication year is turned off now");
     }
 }
