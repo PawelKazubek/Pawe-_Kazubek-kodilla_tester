@@ -1,12 +1,21 @@
 package com.kodilla.abstracts.homework;
 
 public class Circle extends Shape {
-    static double PI = 3.1415927;
+
     private double r;
-    public Circle(double r, static double PI) {
-        super();
+
+    public Circle(double r) {
+        this.r = r;
     }
 
 
+    @Override
+    public double giveArea() {
+        return PI * r *r;
+    }
 
+    @Override
+    public double givePerimeter() {
+        return 2* PI *r;
+    }
 }

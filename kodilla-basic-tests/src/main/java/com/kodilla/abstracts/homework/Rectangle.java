@@ -5,10 +5,17 @@ public class Rectangle extends Shape {
     private double b;
 
     public Rectangle(double a, double b) {
-        super(4, 6);
+        this.a = a;
+        this.b = b;
     }
+
+    @Override
+    public double giveArea() {
+        return a*b;
+    }
+
     @Override
     public double givePerimeter() {
-        return 2*getA()+2*getB();
+        return 2*a+2*b;
     }
 }
