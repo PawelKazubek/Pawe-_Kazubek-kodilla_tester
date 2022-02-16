@@ -9,4 +9,11 @@ public abstract class Job {
         this.responsibilities = responsibilities;
     }
 
+    public int getSalary() {
+        return salary;
+    }
+
+    public String getResponsibilities() {
+        return responsibilities;
+    }
 }

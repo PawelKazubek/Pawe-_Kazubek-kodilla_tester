@@ -1,8 +1,10 @@
 package com.kodilla.abstracts.homework;
 
 public class Rectangle extends Shape {
+    private double a;
+    private double b;
 
-    public Rectangle() {
+    public Rectangle(double a, double b) {
         super(4, 6);
     }
     @Override

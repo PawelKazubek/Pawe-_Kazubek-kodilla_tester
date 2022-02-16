@@ -1,7 +1,14 @@
 package com.kodilla.abstracts.homework;
 
 public class Square extends Shape {
-    public Square() {
+    private double a;
+    private double b;
+
+    public Square(double a, double b) {
         super(a, b);
+    }
+    @Override
+    public double giveArea() {
+        return getA()*getB();
     }
 }

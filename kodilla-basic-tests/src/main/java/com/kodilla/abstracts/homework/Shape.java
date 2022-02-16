@@ -7,11 +7,9 @@ public abstract class Shape {
     static double PI = 3.1415927;
     private double r;
 
-    public Shape(double a, double b, double r) {
+    public Shape(double a, double b) {
         this.a = a;
         this.b = b;
-        this.r = r;
-
     }
     public double getA() {
         return a;
