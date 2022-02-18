@@ -22,9 +22,9 @@ public class Application {
         double squareResult = calculator.square(a);
         boolean correct3 = ResultChecker.assertEquals(25, squareResult, 1);
         if (correct3) {
-            System.out.print("Metoda square działa poprawnie dla liczb " + a);
+            System.out.print("Metoda square działa poprawnie dla liczby " + a);
         } else {
-            System.out.println("Metoda square nie działa poprawnie dla liczb " + a);
+            System.out.println("Metoda square nie działa poprawnie dla liczby " + a);
         }
     }
 }
