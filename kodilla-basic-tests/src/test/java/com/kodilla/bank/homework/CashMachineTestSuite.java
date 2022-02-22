@@ -8,7 +8,7 @@ public class CashMachineTestSuite {
     @Test
     public void shouldHaveZeroLength() {
         CashMachine cashMachine = new CashMachine();
-        int[] transactions = cashMachine.getTransactions();
+        int transactions = cashMachine.getSumOfTransactions();
         assertEquals(0, transactions.length);
     }
     @Test
@@ -17,7 +17,7 @@ public class CashMachineTestSuite {
         cashMachine.add(2);
         cashMachine.add(3);
 
-        int[] transactions = cashMachine.getTransactions();
+        int transactions = cashMachine.getSumOfTransactions();
         assertEquals(2, transactions.length);
         assertEquals(2, transactions[0]);
         assertEquals(3, transactions[1]);

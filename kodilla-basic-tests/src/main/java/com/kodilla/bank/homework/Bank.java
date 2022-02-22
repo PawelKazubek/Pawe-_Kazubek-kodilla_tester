@@ -24,17 +24,17 @@ public class Bank {
         return sum;
     }
     public int averageDeposit() {
-        int sum = 0;
-        for (int i = 0; i > this.cashMachines.length; i++) {
-            sum = this.cashMachines[i];
-        }
-        return sum/this.cashMachines.length;
+        int deposit = 0;
+        for (CashMachine maschine: cashMachines) {
+            deposit += maschine.numberOfDeposit();
+            }
+        return deposit / this.cashMachines.length;
     }
     public int averageWithdraw() {
-        int sum = 0;
-        for (int i = 0; i < this.cashMachines.length; i++) {
-            sum = this.cashMachines[i];
+        int withdraw = 0;
+        for (CashMachine maschine: cashMachines) {
+            withdraw -= maschine.numberOfWithdraw();
         }
-        return sum/this.cashMachines.length;
+        return withdraw / this.cashMachines.length;
     }
 }
