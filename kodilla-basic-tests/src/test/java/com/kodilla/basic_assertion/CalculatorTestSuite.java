@@ -29,4 +29,11 @@ public class CalculatorTestSuite {
         double squareResult = calculator.square(a);
         assertEquals(25, squareResult, 0.1);
     }
+    @Test
+    public void testSquareWhenNumberBelowZero() {
+        Calculator calculator = new Calculator();
+        double a = -2;
+        double squareResult = calculator.square(a);
+        assertEquals(4, squareResult, 0.01);
+    }
 }
