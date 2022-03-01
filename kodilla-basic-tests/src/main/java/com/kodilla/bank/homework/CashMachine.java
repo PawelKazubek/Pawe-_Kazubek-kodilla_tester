@@ -39,6 +39,25 @@ public class CashMachine {
                 count--;
             }
         }
+        return count*-1;
+    }
+    public int sumOfNumberOfDeposit() {
+        int count = 0;
+        for (int tx: transactions) {
+            if (tx > 0) {
+                count += tx;
+            }
+        }
         return count;
     }
+    public int sumOfNumberOfWithdraw() {
+        int count = 0;
+        for (int tx: transactions) {
+            if (tx < 0) {
+                count += tx;
+            }
+        }
+        return count*-1;
+    }
+
 }

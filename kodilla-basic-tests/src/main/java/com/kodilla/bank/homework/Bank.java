@@ -18,23 +18,39 @@ public class Bank {
     }
     public int bilans() {
         int sum = 0;
-        for (CashMachine machine: cashMachines) {
+        for (CashMachine machine : cashMachines) {
             sum += machine.getSumOfTransactions();
         }
         return sum;
     }
-    public int averageDeposit() {
-        int deposit = 0;
-        for (CashMachine maschine: cashMachines) {
-            deposit += maschine.numberOfDeposit();
-            }
-        return deposit / this.cashMachines.length;
-    }
-    public int averageWithdraw() {
-        int withdraw = 0;
-        for (CashMachine maschine: cashMachines) {
-            withdraw -= maschine.numberOfWithdraw();
+
+    public int quantityOfCashDeposit() {
+        int cashDeposit = 0;
+        for (int i = 0; i < size; i++) {
+            cashDeposit += cashMachines[i].numberOfDeposit();
         }
-        return withdraw / this.cashMachines.length;
+        return cashDeposit;
+    }
+    public int quantityOfCashWithdraw() {
+        int cashWithdraw = 0;
+        for (int i = 0; i < size; i++) {
+            cashWithdraw += cashMachines[i].numberOfWithdraw();
+        }
+        return cashWithdraw*-1;
+    }
+
+    public int getAverageDeposit() {
+        int deposit = 0;
+        for (CashMachine machine: cashMachines) {
+            deposit += machine.sumOfNumberOfDeposit();
+        }
+        return deposit / quantityOfCashDeposit();
+    }
+    public int getAverageWithdraw() {
+        int withdraw = 0;
+        for (CashMachine machine: cashMachines) {
+            withdraw += machine.sumOfNumberOfWithdraw();
+        }
+        return withdraw / quantityOfCashWithdraw()*-1;
     }
 }
