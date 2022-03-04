@@ -10,10 +10,12 @@ public class CarRace {
 
         Infiniti infiniti = new Infiniti(70);
         doRace(infiniti);
-
     }
     private static void doRace(Car car) {
         car.increaseSpeed();
+        car.increaseSpeed();
+        car.increaseSpeed();
+        car.decreaseSpeed();
         car.decreaseSpeed();
         System.out.println(car.getSpeed());
 
