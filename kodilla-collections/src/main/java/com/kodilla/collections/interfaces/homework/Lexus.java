@@ -18,10 +18,12 @@ public class Lexus implements Car {
     @Override
     public void increaseSpeed() {
         speed = speed + IncreaseValue;
+        System.out.println("Lexus increase speed is: " + speed);
     }
 
     @Override
     public void decreaseSpeed() {
         speed = speed + DecreaseValue;
+        System.out.println("Lexus decrease speed is: " + speed);
     }
 }

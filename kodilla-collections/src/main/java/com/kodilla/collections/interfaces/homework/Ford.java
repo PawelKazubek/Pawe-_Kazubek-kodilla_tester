@@ -17,12 +17,14 @@ public class Ford implements Car {
     @Override
     public void increaseSpeed() {
         speed = speed + IncreaseValue;
+        System.out.println("Ford increase speed is: " + speed);
 
     }
 
     @Override
     public void decreaseSpeed() {
         speed = speed + DecreaseValue;
+        System.out.println("Ford decrease speed is: " + speed);
 
     }
 }

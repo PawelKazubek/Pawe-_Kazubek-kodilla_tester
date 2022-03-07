@@ -18,10 +18,12 @@ public class Infiniti implements Car {
     @Override
     public void increaseSpeed() {
         speed = speed + IncreaseValue;
+        System.out.println("Infiniti increase speed is: " + speed);
     }
 
     @Override
     public void decreaseSpeed() {
         speed = speed + DecreaseValue;
+        System.out.println("Infiniti decrease speed is: " + speed);
     }
 }
