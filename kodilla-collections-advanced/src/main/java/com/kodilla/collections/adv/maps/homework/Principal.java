@@ -9,7 +9,6 @@ public class Principal {
     public Principal(String firstname, String lastname) {
         this.firstname = firstname;
         this.lastname = lastname;
-
     }
 
     @Override
@@ -19,7 +18,6 @@ public class Principal {
         Principal principal = (Principal) o;
         return Objects.equals(firstname, principal.firstname) && Objects.equals(lastname, principal.lastname);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(firstname, lastname);
@@ -27,7 +25,6 @@ public class Principal {
     public String getFirstname() {
         return firstname;
     }
-
     public String getLastname() {
         return lastname;
     }
