@@ -10,15 +10,12 @@ public class Book {
         this.author = author;
         this.title = title;
     }
-
     public String getAuthor() {
         return author;
     }
-
     public String getTitle() {
         return title;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,12 +23,10 @@ public class Book {
         Book book = (Book) o;
         return Objects.equals(title, book.title) && Objects.equals(author, book.author);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(title, author);
     }
-
     @Override
     public String toString() {
         return "Book {" +

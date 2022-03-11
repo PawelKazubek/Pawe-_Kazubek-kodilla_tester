@@ -8,5 +8,7 @@ public class BookApplication {
         System.out.println(book1);
         System.out.println(book2);
         System.out.println(book3);
+        System.out.println("-------------");
+        System.out.println(book1==book2);
     }
 }
