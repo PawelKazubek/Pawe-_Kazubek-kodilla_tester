@@ -5,12 +5,17 @@ import java.util.List;
 
 public class BookManager {
 
-    List<Book> books = new ArrayList<>();
+    static List<Book> books = new ArrayList<>();
 
-    public static Book createBook(String title, String author) {
-        Book book = BookManager.createBook("Title", "Author");
+    public static Book createBook(String author, String title) {
+        for (Book book : books) {
+            if (book.getAuthor().equals(author) && book.getTitle().equals(title)) {
+                return book;
+            }
+        }
+        Book book = new Book(author, title);
+        books.add(book);
 
-
-        return new Book(author, title);
+        return book;
     }
 }
