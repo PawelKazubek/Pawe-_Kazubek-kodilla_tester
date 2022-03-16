@@ -5,25 +5,25 @@ import java.util.List;
 
 public class FlightFinder {
 
-    public List<Flight> findFlightsFrom(String departure) {
-        List<Flight> results = new ArrayList<>();
+    public static List<Flight> findFlightsFrom(String departure) {
+        List<Flight> resultsDeparture = new ArrayList<>();
 
         for (Flight searchedFlight : FlightRepository.getFlightTable()) {
             if (searchedFlight.getDeparture().equals(departure)) {
-                results.add(searchedFlight);
+                resultsDeparture.add(searchedFlight);
             }
         }
-        return results;
+        return resultsDeparture;
     }
-    public List<Flight> findFlightsTo(String arrival) {
-        List<Flight> results = new ArrayList<>();
+    public static List<Flight> findFlightsTo(String arrival) {
+        List<Flight> resultsArrival = new ArrayList<>();
 
         for (Flight searchedFlight : FlightRepository.getFlightTable()) {
             if (searchedFlight.getArrival().equals(arrival)) {
-                results.add(searchedFlight);
+                resultsArrival.add(searchedFlight);
             }
         }
-        return results;
+        return resultsArrival;
     }
 
 }
