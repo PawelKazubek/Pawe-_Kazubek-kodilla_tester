@@ -8,12 +8,19 @@ public class ForumStats {
 
         double avg = UsersRepository.getUsersList()
                 .stream()
-                .filter(n -> n.getAge().equals(40))
-                .map(ForumStats::getNumberOfPost)
+                .filter(n -> n.getAge() >=40)
+                .mapToInt(ForumStats::getNumberOfPost)
                 .average()
                 .getAsDouble();
-        System.out.println(avg);
+        System.out.println("Średnia liczba postów dla użytkowników >=40: " + avg);
 
+        double avg1 = UsersRepository.getUsersList()
+                .stream()
+                .filter(n -> n.getAge() <40)
+                .mapToInt(ForumStats::getNumberOfPost)
+                .average()
+                .getAsDouble();
+        System.out.println("Średnia liczba postów dla użytkowników <40: " + avg1);
     }
     public static int getNumberOfPost(User user) {
         return user.getNumberOfPost();
