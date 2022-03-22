@@ -9,8 +9,9 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("Order nr 4"));
         warehouse.addOrder(new Order("Order nr 5"));
 
-        try {
-            warehouse.isOrderInUse("Order nr 6");
+        try { String orderNumber = "Order nr 6";
+            warehouse.getOrder(orderNumber);
+            System.out.println("Found order with nr: " + orderNumber);
         } catch (OrderDoesntExistException e) {
             System.out.println("Such order doesn't exist. Please try another number.");
         } finally {
