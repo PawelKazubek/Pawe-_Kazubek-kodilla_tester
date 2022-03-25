@@ -11,13 +11,13 @@ public class UserValidatorTestSuite {
     private UserValidator validator = new UserValidator();
 
     @ParameterizedTest
-    @ValueSource(strings = {"PaL5-gtA_*"} )
+    @ValueSource(strings = {"PaL5-gtA_*", "Okno_na^swiat", "sT-0_p*A"} )
     public void shouldValidateUsername(String username) {
         assertFalse(validator.validateUsername(username));
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"nicniewychodzi@mi.tu"})
+    @ValueSource(strings = {"nicniewychodzi@mi.tu", "koduj_dalej@kod.pl", "Parametry.dane@one.de"})
     public void shouldValidateEmail(String email) {
         assertTrue(validator.validateEmail(email));
 
