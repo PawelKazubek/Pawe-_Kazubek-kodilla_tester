@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PersonSourceTestSuite {
 
     @ParameterizedTest
-    @MethodSource(value = "com.kodilla.parametrized_tests.StringSources#provideStringForTestingBMI")
+    @MethodSource(value = "com.kodilla.parametrized_tests.homework.PersonSource#provideStringForTestingBMI")
     public void shouldCountBMI(String expected, Person person) {
         assertEquals(expected, person.getBMI());
     }
