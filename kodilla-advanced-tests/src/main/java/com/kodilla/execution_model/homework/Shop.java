@@ -10,11 +10,21 @@ public class Shop {
     public void addOrder(Order order) {
         this.orders.add(order);
     }
-    public Order getOrdersFromDates(LocalDate date1, LocalDate date2) {
+    public List<Order> getOrdersFromDates(LocalDate date1, LocalDate date2) {
+        List<Order> ordersDate = new ArrayList<>();
         for (Order order : orders) {
-
-            return order;
+            if (date1.isAfter(order.getDate()) && date2.isBefore(order.getDate()))
+                ordersDate.add(order);
         }
+            return ordersDate;
+    }
+    public List<Order> getOrderBetweenValues(double value1, double value2) {
+        List<Order> ordersValue = new ArrayList<>();
+        for (Order order : orders) {
+            if (value1 <= order.getValue() && value2 >= order.getValue())
+                ordersValue.add(order);
+        }
+        return ordersValue;
     }
 
     public int getQuantity() {
