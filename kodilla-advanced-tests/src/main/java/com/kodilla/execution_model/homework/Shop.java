@@ -13,7 +13,7 @@ public class Shop {
     public List<Order> getOrdersFromDates(LocalDate date1, LocalDate date2) {
         List<Order> ordersDate = new ArrayList<>();
         for (Order order : orders) {
-            if (date1.isAfter(order.getDate()) && date2.isBefore(order.getDate()))
+            if (order.getDate().isAfter(date1) && order.getDate().isBefore(date2))
                 ordersDate.add(order);
         }
             return ordersDate;

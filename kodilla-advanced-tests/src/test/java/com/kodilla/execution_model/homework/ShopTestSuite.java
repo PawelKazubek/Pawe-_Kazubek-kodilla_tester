@@ -13,7 +13,7 @@ public class ShopTestSuite {
 
     Shop shop = new Shop();
     Order TVSet = new Order(5500, LocalDate.of(2022, 1, 15),"Kmicic");
-    Order LegoSet = new Order(564,LocalDate.of(2021,11,2), "Pustelnik");
+    Order LegoSet = new Order(564, LocalDate.of(2021,11,2), "Pustelnik");
     Order MacBookPro = new Order(14700, LocalDate.of(2021, 6, 18), "Neo1999");
     Order PlayStation5 = new Order(2999, LocalDate.of(2021, 10, 25), "SpeedyJoe");
     Order IPhone13 = new Order(5999, LocalDate.of(2022, 2, 22), "Anonymus");
@@ -33,7 +33,7 @@ public class ShopTestSuite {
     }
     @Test
     public void shouldGetExistingOrderFromBetweenDates() {
-        List result = shop.getOrdersFromDates(LocalDate.of (2021,3, 31),LocalDate.of(2022,05, 30));
+        List<Order> result = shop.getOrdersFromDates(LocalDate.of(2022,2, 1), LocalDate.of(2022,3, 30));
         List<Order> expected = new ArrayList<>();
         expected.add(IPhone13);
         assertEquals(expected, result);
@@ -41,9 +41,10 @@ public class ShopTestSuite {
     }
     @Test
     public void shouldGetExistingOrderWithValue() {
-        List result = shop.getOrderBetweenValues(5000, 5600);
-        List<Order> TVSet = new ArrayList<>();
-        assertEquals(TVSet, result);
+        List<Order> result = shop.getOrderBetweenValues(5000, 5600);
+        List<Order> expected = new ArrayList<>();
+        expected.add(TVSet);
+        assertEquals(expected, result);
 
     }
 }
