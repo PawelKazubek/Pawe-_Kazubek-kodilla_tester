@@ -1,4 +1,4 @@
-package com.kodilla.collections.lists;
+package lists;
 
 import com.kodilla.collections.interfaces.Circle;
 import com.kodilla.collections.interfaces.Shape;
