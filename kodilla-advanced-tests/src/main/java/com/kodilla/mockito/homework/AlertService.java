@@ -15,11 +15,8 @@ public class AlertService {
          users.add(user);
          alerts.put(location, users);
     }
-    public void sendAlert (String location, User user) {
-        for(Map.Entry<String, Set<User>> note : alerts.entrySet()) {
-            if (note.getKey().equals(location))
-                note.getValue();
-        }
+    public void sendAlert (String location, Alert alert) {
+        this.location.reveive(alert);
 
     }
     public void removeLocation (User user, String location) {
