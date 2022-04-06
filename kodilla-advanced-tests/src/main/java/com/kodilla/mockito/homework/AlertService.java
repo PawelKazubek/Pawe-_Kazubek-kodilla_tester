@@ -16,15 +16,19 @@ public class AlertService {
          alerts.put(location, users);
     }
     public void sendAlert (Alert alert, String location) {
+
         if (alerts.containsKey(location)) {
             alerts.get(location).forEach(user -> user.receive(alert));
         }
-
     }
     public void removeLocation (User user, String location) {
-        this.alerts.remove(location);
+        Set<User> users = alerts.getOrDefault(location, new HashSet<>());
+        alerts.remove(location);
+
+
     }
     public void removeUser (User user, String location) {
+
         this.alerts.remove(user);
     }
 
