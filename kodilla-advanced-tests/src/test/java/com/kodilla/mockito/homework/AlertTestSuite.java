@@ -51,7 +51,7 @@ public class AlertTestSuite {
     }
     @Test
     public void shouldSendAlertInLocationToSomeGroupOfUsers() {
-        alertService.addUserToLocation("Warsaw", user);
+        alertService.addUserToLocation("Kraków", user);
         User user1 = Mockito.mock(User.class);
         alertService.addUserToLocation("Warsaw", user1);
         User user2 = Mockito.mock(User.class);
@@ -74,7 +74,7 @@ public class AlertTestSuite {
         alertService.sendAlert(alert, "Warsaw");
         alertService.sendAlert(alert, "Kraków");
         alertService.sendAlert(alert, "Gdańsk");
-        Mockito.verify(user, times(1)).receive(alert);
+        Mockito.verify(user, times(3)).receive(alert);
         Mockito.verify(user1,times(1)).receive(alert);
         Mockito.verify(user2,times(1)).receive(alert);
 
@@ -84,11 +84,11 @@ public class AlertTestSuite {
         alertService.addUserToLocation("Warsaw", user);
         alertService.addUserToLocation("Kraków", user);
         alertService.addUserToLocation("Gdańsk", user);
-        alertService.removeLocation(user, "Kraków");
+        alertService.removeLocation("Kraków");
         alertService.sendAlert(alert, "Warsaw");
         alertService.sendAlert(alert, "Kraków");
         alertService.sendAlert(alert, "Gdańsk");
-        Mockito.verify(user,times(0)).receive(alert);
+        Mockito.verify(user,times(2)).receive(alert);
 
     }
 }

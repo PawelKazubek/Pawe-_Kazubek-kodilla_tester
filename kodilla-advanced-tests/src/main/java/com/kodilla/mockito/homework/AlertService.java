@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class AlertService {
     private Map<String, Set<User>> alerts = new HashMap<>();
@@ -21,18 +22,19 @@ public class AlertService {
             alerts.get(location).forEach(user -> user.receive(alert));
         }
     }
-    public void removeLocation (User user, String location) {
-        Set<User> users = alerts.getOrDefault(location, new HashSet<>());
+    public void removeLocation (String location) {
         alerts.remove(location);
-
 
     }
     public void removeUser (User user, String location) {
-
-        this.alerts.remove(user);
+        if (alerts.containsKey(location)) {
+            alerts.get(location).remove(user);
+        }
     }
 
     public void removeUserFromAllLocations(User user) {
-        this.alerts.remove(user);
+        for (Set<User> users : this.alerts.values()) {
+            users.remove(user);
+        }
     }
 }
