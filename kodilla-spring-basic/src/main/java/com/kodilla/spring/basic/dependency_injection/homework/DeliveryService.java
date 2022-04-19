@@ -1,6 +1,6 @@
 package com.kodilla.spring.basic.dependency_injection.homework;
 
-public class DeliveryService {
+public class DeliveryService implements DeliveryServiceInterface {
 
     public boolean deliverPackage(String address, double weight) {
         if (weight > 30) {
