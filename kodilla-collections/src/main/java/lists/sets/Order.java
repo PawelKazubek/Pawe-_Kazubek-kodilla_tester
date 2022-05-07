@@ -1,4 +1,4 @@
-package com.kodilla.collections.sets;
+package lists.sets;
 
 import java.util.Objects;
 

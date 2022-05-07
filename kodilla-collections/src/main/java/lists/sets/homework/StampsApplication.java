@@ -1,4 +1,4 @@
-package com.kodilla.collections.sets.homework;
+package lists.sets.homework;
 
 import java.util.HashSet;
 import java.util.Set;
